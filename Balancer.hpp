@@ -3,14 +3,14 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
-
+using namespace std;
 struct BalanceEntry {
-    std::string user;
+    string user;
     double amount;
 
     bool operator<(const BalanceEntry& other) const;
 };
 
-void minimizeTransactions(const std::unordered_map<std::string, double>& balances);
+void minimizeTransactions(const unordered_map<string, double>& balances);
 
 #endif // BALANCER_HPP
