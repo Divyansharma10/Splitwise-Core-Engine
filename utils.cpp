@@ -2,19 +2,21 @@
 #include <sstream>
 #include <algorithm>
 
-std::vector<std::string> split(const std::string& str, char delimiter) {
-    std::vector<std::string> tokens;
-    std::stringstream ss(str);
-    std::string token;
+using namespace std;
+
+vector<string> split(const string& str, char delimiter) {
+    vector<string> tokens;
+    stringstream ss(str);
+    string token;
     while (getline(ss, token, delimiter)) {
         tokens.push_back(trim(token));
     }
     return tokens;
 }
 
-std::string trim(const std::string& str) {
+string trim(const string& str) {
     size_t first = str.find_first_not_of(" \t\n");
-    if (first == std::string::npos) return "";
+    if (first == string::npos) return "";
     size_t last = str.find_last_not_of(" \t\n");
     return str.substr(first, last - first + 1);
 }
